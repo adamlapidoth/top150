@@ -8,7 +8,7 @@ def test_merge_1():
     n = 3
     s = Solution()
     s.merge(nums1, m, nums2, n)
-    assert nums1 == [1, 2, 2, 3, 4, 6]
+    assert nums1 == [1, 2, 2, 3, 5, 6]
 
 
 def test_merge_2():
