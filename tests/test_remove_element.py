@@ -14,4 +14,4 @@ def test_remove_element_2():
     nums = [0, 1, 2, 2, 3, 0, 4, 2]
     k = s.removeElement(nums=nums, val=2)
     assert k == 5
-    assert sorted(nums[:k]) == sorted([2, 2])
+    assert sorted(nums[:k]) == sorted([0, 1, 3, 0, 4])
