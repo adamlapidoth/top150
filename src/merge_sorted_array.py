@@ -29,5 +29,4 @@ class Solution:
             res.extend(nums2[j:])
         else:
             res.extend(nums1[i:])
-        nums1[:] = res[:m + n]
-
+        nums1[:] = res[: m + n]
