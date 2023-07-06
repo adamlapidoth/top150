@@ -29,3 +29,13 @@ def test_merge_3():
     s = Solution()
     s.merge(nums1, m, nums2, n)
     assert nums1 == [1]
+
+
+def test_merge_4():
+    nums1 = [4, 5, 6, 0, 0, 0]
+    m = 3
+    nums2 = [1, 2, 3]
+    n = 3
+    s = Solution()
+    s.merge(nums1, m, nums2, n)
+    assert nums1 == [1, 2, 3, 4, 5, 6]
