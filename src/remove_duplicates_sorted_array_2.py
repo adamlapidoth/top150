@@ -1,3 +1,4 @@
+from collections import Counter
 from typing import List
 
 
@@ -11,4 +12,9 @@ class Solution:
         :return: The number of elements. Each element can have at most 2
         duplicates.
         """
-        pass
+        c = Counter(nums)
+        for num in c:
+            if c[num] > 2:
+                c[num] = 2
+        nums[:] = sorted(c.elements())
+        return len(nums)
