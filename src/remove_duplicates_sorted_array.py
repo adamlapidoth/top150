@@ -1,3 +1,6 @@
+from typing import List
+
+
 class Solution:
     def removeDuplicates(self, nums: List[int]) -> int:
         """
@@ -7,4 +10,6 @@ class Solution:
         nums should be changed in-place so that unique elements appear
         only once.
         """
-        pass
+        my_set = set(nums)
+        nums[:] = sorted(my_set)
+        return len(my_set)
