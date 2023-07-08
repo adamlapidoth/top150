@@ -1,3 +1,4 @@
+from collections import Counter
 from typing import List
 
 
@@ -10,4 +11,11 @@ class Solution:
         :param nums: List of numbers
         :return: The majority element
         """
-        pass
+        counter = Counter(nums)
+        for num in counter:
+            if counter[num] >= len(nums) / 2:
+                return num
+        raise ValueError(
+            "The List of numbers doesn't have a majority element"
+        )  # if code reached this point
+        # there was an error in the nums parameter
