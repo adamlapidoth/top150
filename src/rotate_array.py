@@ -8,4 +8,5 @@ class Solution:
         :param nums: A list of numbers
         :param k: Number of places to rotate to the right
         """
-        pass
+        length = len(nums)
+        nums[:] = nums[length - k % length:] + nums[:length - k % length]
