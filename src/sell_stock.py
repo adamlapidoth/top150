@@ -13,4 +13,9 @@ class Solution:
         :param prices: Array of numbers
         :return: The max profit. if no profit is possible return 0
         """
-        pass
+        mp = 0
+        for i in range(len(prices) - 1):
+            highest = max(prices[i + 1:])
+            if highest - prices[i] > mp:
+                mp = highest - prices[i]
+        return mp
