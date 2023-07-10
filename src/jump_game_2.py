@@ -14,4 +14,13 @@ class Solution:
         :param nums: Array of numbers
         :return: The minimum number of jumps to reach last index.
         """
-        pass
+        n = len(nums)
+        dp = [float("inf") for _ in range(n)]
+        dp[0] = 0  # init DP array [0, inf, inf, inf, ...]
+
+        for i in range(n):
+            for j in range(1, nums[i] + 1):
+                if i + j < n:
+                    dp[i + j] = min(dp[i + j], dp[i] + 1)
+
+        return int(dp[-1])
