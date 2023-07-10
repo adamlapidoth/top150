@@ -15,12 +15,11 @@ class Solution:
         :return: The minimum number of jumps to reach last index.
         """
         n = len(nums)
-        dp = [float("inf") for _ in range(n)]
-        dp[0] = 0  # init DP array [0, inf, inf, inf, ...]
-
-        for i in range(n):
-            for j in range(1, nums[i] + 1):
-                if i + j < n:
-                    dp[i + j] = min(dp[i + j], dp[i] + 1)
-
-        return int(dp[-1])
+        i, last_pos, max_pos, jump = 0, 0, 0, 0
+        while i < n - 1:
+            max_pos = max(nums[i] + i, max_pos)
+            if i == last_pos:
+                last_pos = max_pos
+                jump += 1
+            i += 1
+        return jump
