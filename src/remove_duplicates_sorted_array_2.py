@@ -12,9 +12,9 @@ class Solution:
         :return: The number of elements. Each element can have at most 2
         duplicates.
         """
-        c = Counter(nums)
-        for num in c:
-            if c[num] > 2:
-                c[num] = 2
-        nums[:] = sorted(c.elements())
-        return len(nums)
+        i = 0
+        for e in nums:
+            if i == 0 or i == 1 or nums[i - 2] != e:
+                nums[i] = e
+                i += 1
+        return i
