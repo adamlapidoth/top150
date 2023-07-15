@@ -13,14 +13,4 @@ class Solution:
         :param prices: Array of numbers
         :return: The max profit. if no profit is possible return 0
         """
-        max_profit = 0
-        buy = prices[0]  # current lowest price
-        for i in range(1, len(prices)):
-            if prices[i] < buy:
-                # found lower price
-                buy = prices[i]
-            elif prices[i] - buy > max_profit:
-                # if current price is greater then previous buy and profit is
-                # greater than max profit then maximize profit
-                max_profit = prices[i] - buy
-        return max_profit
+        pass

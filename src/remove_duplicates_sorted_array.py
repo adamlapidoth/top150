@@ -10,6 +10,4 @@ class Solution:
         nums should be changed in-place so that unique elements appear
         only once.
         """
-        my_set = set(nums)
-        nums[:] = sorted(my_set)
-        return len(my_set)
+        pass

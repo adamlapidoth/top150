@@ -13,9 +13,4 @@ class Solution:
         :param prices: Array of prices
         :return: The max profit. if no profit can be achieved returns 0
         """
-        max_profit = 0
-        deltas = [prices[i + 1] - prices[i] for i in range(len(prices) - 1)]
-        for d in deltas:
-            if d > 0:
-                max_profit += d
-        return max_profit
+        pass

@@ -11,11 +11,4 @@ class Solution:
         :param nums: List of numbers
         :return: The majority element
         """
-        counter = Counter(nums)
-        for num in counter:
-            if counter[num] >= len(nums) / 2:
-                return num
-        raise ValueError(
-            "The List of numbers doesn't have a majority element"
-        )  # if code reached this point
-        # there was an error in the nums parameter
+        pass

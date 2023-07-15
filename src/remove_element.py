@@ -11,11 +11,4 @@ class Solution:
         nums will be changed in-place so that all elements that are not equal
         to val will be first (order is not important)
         """
-        res = 0
-        nums_tmp = []
-        for x in nums:
-            if x != val:
-                res += 1
-                nums_tmp.append(x)
-        nums[:] = nums_tmp
-        return res
+        pass
