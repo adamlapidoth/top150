@@ -10,4 +10,9 @@ class Solution:
         nums should be changed in-place so that unique elements appear
         only once.
         """
-        pass
+        i = 0
+        for e in nums:
+            if i == 0 or nums[i - 1] != e:
+                nums[i] = e
+                i += 1
+        return i
