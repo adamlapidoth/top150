@@ -16,4 +16,17 @@ class Solution:
         To accommodate this nums1 will have the length of m+n and the
         last n elements will be set to 0 and should be ignored
         """
-        pass
+        i, j = m - 1, n - 1
+        z = m + n - 1
+        while i >= 0 and j >= 0:
+            if nums1[i] > nums2[j]:
+                nums1[z] = nums1[i]
+                i -= 1
+            else:
+                nums1[z] = nums2[j]
+                j -= 1
+            z -= 1
+        while j >= 0:
+            nums1[z] = nums2[j]
+            z -= 1
+            j -= 1
