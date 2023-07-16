@@ -10,4 +10,8 @@ class Solution:
         :param nums: An array of numbers
         :return: True if it is possible to reach last index, False otherwise
         """
-        pass
+        pos = len(nums) - 1
+        for i in range(pos, 0, -1):
+            if nums[i - 1] + i - 1 >= pos:
+                pos = i - 1
+        return pos == 0
