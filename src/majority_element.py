@@ -1,4 +1,3 @@
-from collections import Counter
 from typing import List
 
 
@@ -11,4 +10,14 @@ class Solution:
         :param nums: List of numbers
         :return: The majority element
         """
-        pass
+        votes = 0
+        candidate = None
+        for n in nums:
+            if votes == 0:
+                candidate = n
+                votes = 1
+            elif candidate == n:
+                votes += 1
+            else:
+                votes -= 1
+        return candidate
