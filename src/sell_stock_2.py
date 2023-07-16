@@ -19,4 +19,3 @@ class Solution:
             if profit > 0:
                 max_profit += profit
         return max_profit
-
