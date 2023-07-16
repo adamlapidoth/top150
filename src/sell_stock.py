@@ -13,4 +13,11 @@ class Solution:
         :param prices: Array of numbers
         :return: The max profit. if no profit is possible return 0
         """
-        pass
+        max_profit = 0
+        lowest_price = prices[0]
+        for price in prices:
+            if price < lowest_price:
+                lowest_price = price
+            if price - lowest_price > max_profit:
+                max_profit = price - lowest_price
+        return max_profit
