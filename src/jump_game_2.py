@@ -14,12 +14,10 @@ class Solution:
         :param nums: Array of numbers
         :return: The minimum number of jumps to reach last index.
         """
-        n = len(nums)
-        i, last_pos, max_pos, jump = 0, 0, 0, 0
-        while i < n - 1:
+        i, jump, last_pos, max_pos = 0, 0, 0, 0
+        for i in range(len(nums) - 1):
             max_pos = max(nums[i] + i, max_pos)
             if i == last_pos:
                 last_pos = max_pos
                 jump += 1
-            i += 1
         return jump

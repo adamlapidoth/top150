@@ -16,17 +16,17 @@ class Solution:
         To accommodate this nums1 will have the length of m+n and the
         last n elements will be set to 0 and should be ignored
         """
-        res = []
-        i, j = 0, 0
-        while i < m and j < n:
-            if nums1[i] < nums2[j]:
-                res.append(nums1[i])
-                i += 1
+        i, j = m - 1, n - 1
+        z = m + n - 1
+        while i >= 0 and j >= 0:
+            if nums1[i] > nums2[j]:
+                nums1[z] = nums1[i]
+                i -= 1
             else:
-                res.append(nums2[j])
-                j += 1
-        if i == m:
-            res.extend(nums2[j:])
-        else:
-            res.extend(nums1[i:])
-        nums1[:] = res[: m + n]
+                nums1[z] = nums2[j]
+                j -= 1
+            z -= 1
+        while j >= 0:
+            nums1[z] = nums2[j]
+            z -= 1
+            j -= 1
